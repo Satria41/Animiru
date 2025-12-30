@@ -2,13 +2,14 @@ name: Release
 
 permissions:
   contents: write
-
+  
 on:
   push:
     branches:
       - release
     tags:
       - v*
+   workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
