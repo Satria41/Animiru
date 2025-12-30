@@ -51,7 +51,7 @@ jobs:
         uses: DamianReeves/write-file-action@v1.2
         with:
             path: app/src/main/assets/client_secrets.json
-            contents: ${{ secrets.CLIENT_SECRETS_TEXT }}
+            contents: app/src/main/assets/client_secrets.json
             write-mode: overwrite
       # <-- AM (SYNC_DRIVE)
 
