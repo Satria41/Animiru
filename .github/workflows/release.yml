@@ -4,13 +4,13 @@ permissions:
   contents: write
   
 on:
-  workflow_dispatch:
   push:
     branches:
       - release
-    tags:
+    tags: 
       - v*
     
+  workflow_dispatch:
   
 
 concurrency:
