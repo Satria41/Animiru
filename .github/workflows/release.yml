@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   get_tag:
-    if: github.repository == 'quickdesh/Animiru'
+    if: github.repository == 'Satria41/Animiru'
     name: Extract tag name
     runs-on: 'ubuntu-24.04'
     outputs:
@@ -31,7 +31,7 @@ jobs:
         run: echo "tag=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_OUTPUT
 
   build:
-    if: github.repository == 'quickdesh/Animiru'
+    if: github.repository == 'Satria41/Animiru'
     name: Build
     runs-on: 'ubuntu-24.04'
     needs: get_tag
@@ -94,7 +94,7 @@ jobs:
             Animiru-x86_64-${{ needs.get_tag.outputs.tag }}.apk
 
   release:
-    if: github.repository == 'quickdesh/Animiru'
+    if: github.repository == 'Satria41/Animiru'
     name: Create GitHub Release
     runs-on: ubuntu-24.04
     needs: [get_tag, build]
@@ -118,7 +118,7 @@ jobs:
           tag_name: ${{ needs.get_tag.outputs.tag }}
           name: Animiru ${{ needs.get_tag.outputs.tag }}
           body: |
-            Check out the [past release notes](https://github.com/quickdesh/Animiru/releases) if you’re upgrading from an earlier version.
+            Check out the [past release notes](https://github.com/Satria41/Animiru/releases) if you’re upgrading from an earlier version.
 
             <!-->
 
